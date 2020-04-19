@@ -5,8 +5,11 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import br.com.bersoncrios.covid19tracker.network.data.model.Country
+import br.com.bersoncrios.covid19tracker.network.data.model.GlobalData
 import br.com.bersoncrios.covid19tracker.network.services.RetrofitApiService
+import io.reactivex.rxjava3.annotations.NonNull
 import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Single
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,5 +35,12 @@ class MainDatasRepository {
                 }
             })
         return mutableLiveData
+    }
+
+    fun listMainDatas(context: Context): @NonNull Observable<List<GlobalData>>? {
+        return RetrofitApiService().covidService().fetchDataRx()
+            .flatMap {
+                    countriesResult -> Observable.fromArray(countriesResult.Countries)
+            }
     }
 }
