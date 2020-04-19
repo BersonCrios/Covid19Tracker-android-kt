@@ -1,4 +1,4 @@
-package br.com.bersoncrios.covid19tracker.network.data
+package br.com.bersoncrios.covid19tracker.network.data.model
 
 data class GlobalData(
     var Country: String,

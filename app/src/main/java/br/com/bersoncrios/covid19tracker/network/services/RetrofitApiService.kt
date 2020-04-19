@@ -1,6 +1,5 @@
-package br.com.bersoncrios.covid19tracker.ui.interfaces
+package br.com.bersoncrios.covid19tracker.network.services
 
-import br.com.bersoncrios.covid19tracker.network.services.CovidService
 import br.com.bersoncrios.covid19tracker.utils.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

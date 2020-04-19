@@ -1,4 +1,4 @@
-package br.com.bersoncrios.covid19tracker.ui.adapers
+package br.com.bersoncrios.covid19tracker.features.maindatas.adaper
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,14 +6,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.bersoncrios.covid19tracker.R
-import br.com.bersoncrios.covid19tracker.network.data.GlobalData
+import br.com.bersoncrios.covid19tracker.network.data.model.GlobalData
 
 
-class ModelListAdapter(val list: List<GlobalData>?) :
-    RecyclerView.Adapter<ModelListAdapter.MyViewHolder>() {
+class MainDatasAdapter(val list: List<GlobalData>?) :
+    RecyclerView.Adapter<MainDatasAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.main_data_list_item, parent, false)
         return MyViewHolder(view)
     }
 
